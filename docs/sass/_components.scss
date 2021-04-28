@@ -31,6 +31,11 @@ hr {
 }
 
 .card {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     padding: 24px;

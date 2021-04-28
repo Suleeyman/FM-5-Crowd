@@ -16,6 +16,7 @@ main {
             position: relative;
 
             ul {
+                z-index: 1;
                 position: absolute;
                 background-color: white;
                 border-radius: 8px;
@@ -161,9 +162,52 @@ main {
 .about {
     @extend %container;
     @extend %section-container;
+    padding-bottom: 24px;
 
     header {
         padding: 40px 0 35px;
+
+        p {
+            margin-top: 20px;
+        }
+
+    }
+
+    .card {
+    
+        .title-content {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .select-content {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 24px;
+
+            p {
+                display: flex;
+                align-items: center;
+
+                strong {
+                    margin-right: 8px;
+                }
+
+            }
+
+        }
+    }
+}
+
+.card.out-of-stock {
+    opacity: 0.5;
+    pointer-events: none;
+
+    .bg-cyan {
+        background-color: #2F2F2F;
+        opacity: 0.5;
     }
 
 }

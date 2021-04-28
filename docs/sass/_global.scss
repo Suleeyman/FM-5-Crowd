@@ -9,7 +9,20 @@ ul {
 }
 
 body {
+    position: relative;
     font-family: 'Commissioner', sans-serif;
     transition: all .3 ease-out;
     background-color: #fafafa;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #00000080;
+    z-index: 1;
+}
+
+.overlay.active {
+    display: initial;
 }

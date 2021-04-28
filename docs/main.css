@@ -17,7 +17,7 @@ p {
   line-height: 24px;
   font-weight: 400;
   letter-spacing: 0.5px;
-  color: #595959;
+  color: #4d4d4d;
 }
 
 b {
@@ -52,9 +52,25 @@ ul {
 }
 
 body {
+  position: relative;
   font-family: "Commissioner", sans-serif;
   transition: all 0.3 ease-out;
   background-color: #fafafa;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00000080;
+  z-index: 1;
+}
+
+.overlay.active {
+  display: initial;
 }
 
 main .container, .mastercraft, .information, .about {
@@ -102,6 +118,11 @@ hr {
 }
 
 .card {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   padding: 24px;
@@ -121,6 +142,7 @@ main .container nav {
   position: relative;
 }
 main .container nav ul {
+  z-index: 1;
   position: absolute;
   background-color: white;
   border-radius: 8px;
@@ -220,8 +242,41 @@ main .container nav .toggle {
   border-radius: 99px;
 }
 
+.about {
+  padding-bottom: 24px;
+}
 .about header {
   padding: 40px 0 35px;
+}
+.about header p {
+  margin-top: 20px;
+}
+.about .card .title-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.about .card .select-content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 24px;
+}
+.about .card .select-content p {
+  display: flex;
+  align-items: center;
+}
+.about .card .select-content p strong {
+  margin-right: 8px;
+}
+
+.card.out-of-stock {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.card.out-of-stock .bg-cyan {
+  background-color: #2F2F2F;
+  opacity: 0.5;
 }
 
 /*# sourceMappingURL=main.css.map */

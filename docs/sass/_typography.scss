@@ -1,0 +1,44 @@
+@use "variables" as *;
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+h1 {
+    font-size: 20px;
+    font-weight: $ft-700;
+    line-height: 24.46px;
+    text-align: center;
+}
+
+h3 {
+    font-weight: $ft-700;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: .5px;
+    color: hsl(0, 0%, 35%);
+}
+
+b {
+    font-size: 14px;
+    font-weight: $ft-500;
+    line-height: 17px;
+    color: $light-cyan;
+    text-shadow: 0 0 .8px $light-cyan;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 18px;
+    font-weight: $ft-500;
+    line-height: 22px;
+}
+
+strong {
+    font-size: 32px;
+    line-height: 39px;
+}

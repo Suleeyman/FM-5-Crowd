@@ -1,0 +1,15 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: 'Commissioner', sans-serif;
+    transition: all .3 ease-out;
+    background-color: #fafafa;
+}

@@ -1,0 +1,38 @@
+@use "variables" as *;
+
+button {
+    cursor: pointer;
+    height: 56px;
+    font-size: 16px;
+    line-height: 20px;
+    border: 0px;
+    font-weight: $ft-700;
+}
+
+.bg-cyan {
+    padding: 0 2.5rem;
+    color: white;
+    background-color: $light-cyan;
+    border-radius: 33.5px;
+    transition: all .3s ease-out;
+
+    &:hover {
+        background-color: $dark-cyan;
+    }
+
+}
+
+hr {
+    border: none;
+    height: 0.5px;
+    background-color: #ccc;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.card {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+}

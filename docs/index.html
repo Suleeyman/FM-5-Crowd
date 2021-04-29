@@ -65,6 +65,7 @@
     </div>
   </section>
   <section class="about">
+    <div class="modal"></div>
     <header>
       <h3>About this project</h3>
       <p>The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen 
@@ -88,7 +89,7 @@
           <strong>101</strong>
           left
         </p>
-        <button type="button" class="bg-cyan">Select Reward</button>
+        <button type="button" class="bg-cyan" data-select="Bamboo">Select Reward</button>
       </div>
     </section>
     <section class="card">
@@ -104,7 +105,7 @@
           <strong>64</strong>
           left
         </p>
-        <button type="button" class="bg-cyan">Select Reward</button>
+        <button type="button" class="bg-cyan" data-select="Black">Select Reward</button>
       </div>
     </section>
     <section class="card out-of-stock">
@@ -120,15 +121,30 @@
           <strong>0</strong>
           left  
         </p>
-        <button type="button" class="bg-cyan">Out of Stock</button>
+        <button type="button" class="bg-cyan disabled" data-select="Mahogany">Out of Stock</button>
       </div>
     </section>
   </section>
+  <form class="modal">
+    <header>
+      <h3>Back this project</h3>
+      <p>
+        Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
+      </p>
+    </header>
+    <section class="card">
+      <input type="checkbox">
+    </section>
+    <section class="card">
+      <input type="checkbox">
+    </section>
+    <section class="card">
+      <input type="checkbox">
+    </section>
+  </form>
   <!-- Selection modal start -->
 
-  <!-- Back this project
-  Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
-
+  <!--
   Pledge with no reward
   Choose to support us without a reward if you simply believe in our project. As a backer, 
   you will be signed up to receive product updates via email.

@@ -1,8 +1,8 @@
 @use "sass" as *;
 
 main {
-    padding-top: 2rem;
     position: relative;
+    padding-top: 2rem;
     height: 300px;
     background: url(./images/image-hero-mobile.jpg) center/cover no-repeat;
 
@@ -52,9 +52,9 @@ main {
     transform: translate(0, 110%);
 }
 
-//====================//
-//=====SECTION H1=====//
-//====================//
+//======================//
+//=====MAIN SECTION=====//
+//======================//
 
 .mastercraft {
     @extend %container;
@@ -78,7 +78,7 @@ main {
 
     .button-content {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
 
         .bookmark {
             cursor: pointer;
@@ -96,7 +96,7 @@ main {
     }
 }
 
-//  Hover effects ON bookmark
+// Hover effects on BOOKMARK
 .bookmark:hover  {
     background-color: #2f2f2f1a;
 
@@ -209,5 +209,185 @@ main {
         background-color: #2F2F2F;
         opacity: 0.5;
     }
+}
+
+//===================//
+//====FIXED MODAL====//
+//===================//
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    bottom: 120px;
+    top: 121px;
+    right: 24px; left: 24px;
+    padding: 24px;
+    border-radius: 8px;
+    background-color: #fff;
+
+    h3:first-child {
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+
+        svg {
+            margin-left: auto;
+            cursor: pointer;
+
+            &:hover path{
+                opacity: 1;
+            }
+        }
+
+        & + p {
+            margin: 24px 0;
+        }
+
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+
+
+    label.card {
+        cursor: pointer;
+
+        header {
+            display: inline-flex;
+            align-items: center;
+    
+            .radio--radio {
+                flex-shrink: 0;
+            }
+
+            .subtitle {
+                margin-left: 1rem;
+            }
+        }   
+
+        p + p {
+            font-size: 15px;
+
+            strong {
+                font-size: 18px;
+            }
+
+        }
+
+    }
 
 }
+
+label.card:hover header{
+    h3 {
+        color: $light-cyan;
+    }
+
+    .radio--radio {
+        border: 1px solid $light-cyan;
+    }
+
+}
+
+//=====================//
+//====PLEDGE SUBMIT====//
+//=====================//
+
+.submit--content {
+    text-align: center;
+    border-top: 1px solid #00000030;
+    padding: 1rem;
+}
+
+.submit--content_pledge {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 8px;
+    margin-top: 1rem;
+    & > .bg-cyan {
+        padding: 0 1rem;
+    }
+}
+
+label[class="pledge-label"] {
+    border-radius: 33.5px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    position: relative;
+    width: 100px;
+    height: 56px;
+
+    &::after {
+        content: "$";
+        font-size: 14px;
+        opacity: .5;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(150%, -50%);
+    }
+
+}
+
+//=====================//
+//==THANK-YOU SECTION==//
+//=====================//
+
+.support {
+    display: none;
+    position: fixed;
+    left: 24px; right: 24px;
+    padding: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+
+    & > *:not(:last-child) {
+        margin-bottom: 24px;
+    }
+}
+
+
+//=====================//
+//====MEDIA QUERIES====//
+//=====================//
+
+
+@media screen and (min-width: 800px) {
+    main {
+        background: url(./images/image-hero-desktop.jpg) center/cover no-repeat;
+    }
+
+    .about {
+
+        .card {
+    
+            .title-content {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .select-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+    
+        }
+    }
+}
+
+
+
+
+
+
+

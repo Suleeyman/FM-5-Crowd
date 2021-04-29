@@ -10,7 +10,7 @@ button {
 }
 
 .bg-cyan {
-    padding: 0 2.5rem;
+    padding: 0 2.3rem;
     color: white;
     background-color: $light-cyan;
     border-radius: 33.5px;
@@ -40,4 +40,43 @@ hr {
     border-radius: 8px;
     padding: 24px;
     margin-bottom: 24px;
+}
+
+input[type="radio"] {
+    display: none;
+
+    &:checked + .radio--radio::after {
+        transform: scale(1);
+    }
+
+}
+
+.radio--radio {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 4px;
+
+    &::after {
+        content: "";
+        // position: absolute;
+        height: 100%;
+        width: 100%;
+        display: block;
+        transform: scale(0);
+        border-radius: 50%;
+        background-color: $light-cyan;
+    }
+}
+
+input[type="text"] {
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2em;
+    height: 2em;
 }

@@ -5,25 +5,28 @@ main {
     padding-top: 2rem;
     height: 300px;
     background: url(./images/image-hero-mobile.jpg) center/cover no-repeat;
-
+    
     .container {
         @extend %container;
-
+        
         nav {
             display: flex;
             align-items: center;
             justify-content: space-between;
             position: relative;
-
+            
             ul {
                 z-index: 1;
                 position: absolute;
                 background-color: white;
+                visibility: hidden;
                 border-radius: 8px;
                 width: 100%;
                 bottom: 0; left: 0;
                 transform: translate(-150%, 110%);
-                transition: transform .3s ease-out;
+                transition: visibility .1s ease-out, transform .3s ease-out, opacity .9s ease-out;
+                opacity: 0;
+
 
                 li {
                     height: 70px;
@@ -50,6 +53,8 @@ main {
 //Event handler => toggle
 .container ul.is-open {
     transform: translate(0, 110%);
+    visibility: visible;
+    opacity: 1;
 }
 
 //======================//
@@ -223,10 +228,17 @@ main {
     scrollbar-width: none;
     bottom: 120px;
     top: 121px;
-    right: 24px; left: 24px;
+    width: calc(100% - 48px);
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 730px;
     padding: 24px;
     border-radius: 8px;
     background-color: #fff;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     h3:first-child {
         display: inline-flex;
@@ -247,12 +259,6 @@ main {
         }
 
     }
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
-
-
 
     label.card {
         cursor: pointer;
@@ -341,10 +347,12 @@ label[class="pledge-label"] {
 .support {
     display: none;
     position: fixed;
-    left: 24px; right: 24px;
+    width: calc(100% - 48px);
+    max-width: 730px;
+    left: 50%;
     padding: 24px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 30%;
+    transform: translate(-50%, -50%);
     z-index: 3;
     background-color: #fff;
     border-radius: 8px;
@@ -361,9 +369,63 @@ label[class="pledge-label"] {
 //=====================//
 
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 730px) {
     main {
         background: url(./images/image-hero-desktop.jpg) center/cover no-repeat;
+
+        .container nav {
+
+            .toggle {
+                display: none;
+            }
+
+            ul {
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                position: static;
+                background-color: transparent;
+                color: white;
+                border-radius: 0;
+                width: auto;
+
+                .nav-item {
+                    box-shadow: 0;
+                    display: inline-block;
+                }
+            }
+
+        }
+
+    }
+
+    .bookmark button {
+        display: initial !important;
+    }
+
+    .information {
+
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            li {
+                display: inline-flex;
+            }
+
+            hr {
+                width: 1px;
+                height: 80px;
+                margin: 0;
+            }
+
+        }
+
+        .bar {
+            margin-top: 24px;
+        }
+
     }
 
     .about {
@@ -384,10 +446,3 @@ label[class="pledge-label"] {
         }
     }
 }
-
-
-
-
-
-
-

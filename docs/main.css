@@ -94,7 +94,7 @@ main .container, .mastercraft, .information, .about {
   width: calc(100% - 48px);
   margin-left: auto;
   margin-right: auto;
-  max-width: 1000px;
+  max-width: 730px;
 }
 
 .mastercraft, .information, .about {
@@ -198,12 +198,14 @@ main .container nav ul {
   z-index: 1;
   position: absolute;
   background-color: white;
+  visibility: hidden;
   border-radius: 8px;
   width: 100%;
   bottom: 0;
   left: 0;
   transform: translate(-150%, 110%);
-  transition: transform 0.3s ease-out;
+  transition: visibility 0.1s ease-out, transform 0.3s ease-out, opacity 0.9s ease-out;
+  opacity: 0;
 }
 main .container nav ul li {
   height: 70px;
@@ -219,6 +221,8 @@ main .container nav .toggle {
 
 .container ul.is-open {
   transform: translate(0, 110%);
+  visibility: visible;
+  opacity: 1;
 }
 
 .mastercraft {
@@ -340,11 +344,16 @@ main .container nav .toggle {
   scrollbar-width: none;
   bottom: 120px;
   top: 121px;
-  right: 24px;
-  left: 24px;
+  width: calc(100% - 48px);
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 730px;
   padding: 24px;
   border-radius: 8px;
   background-color: #fff;
+}
+.modal::-webkit-scrollbar {
+  display: none;
 }
 .modal h3:first-child {
   display: inline-flex;
@@ -360,9 +369,6 @@ main .container nav .toggle {
 }
 .modal h3:first-child + p {
   margin: 24px 0;
-}
-.modal::-webkit-scrollbar {
-  display: none;
 }
 .modal label.card {
   cursor: pointer;
@@ -428,11 +434,12 @@ label[class=pledge-label]::after {
 .support {
   display: none;
   position: fixed;
-  left: 24px;
-  right: 24px;
+  width: calc(100% - 48px);
+  max-width: 730px;
+  left: 50%;
   padding: 24px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 30%;
+  transform: translate(-50%, -50%);
   z-index: 3;
   background-color: #fff;
   border-radius: 8px;
@@ -442,9 +449,47 @@ label[class=pledge-label]::after {
   margin-bottom: 24px;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 730px) {
   main {
     background: url(./images/image-hero-desktop.jpg) center/cover no-repeat;
+  }
+  main .container nav .toggle {
+    display: none;
+  }
+  main .container nav ul {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    position: static;
+    background-color: transparent;
+    color: white;
+    border-radius: 0;
+    width: auto;
+  }
+  main .container nav ul .nav-item {
+    box-shadow: 0;
+    display: inline-block;
+  }
+
+  .bookmark button {
+    display: initial !important;
+  }
+
+  .information ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .information ul li {
+    display: inline-flex;
+  }
+  .information ul hr {
+    width: 1px;
+    height: 80px;
+    margin: 0;
+  }
+  .information .bar {
+    margin-top: 24px;
   }
 
   .about .card .title-content {

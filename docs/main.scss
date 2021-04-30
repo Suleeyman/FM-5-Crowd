@@ -10,20 +10,15 @@ main {
         @extend %container;
         
         nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            @include flex(row, space-between, center);
             position: relative;
             
             ul {
                 z-index: 1;
-                position: absolute;
+                @include position(absolute, auto, 0, 0, 0, -150%, 110%);
                 background-color: white;
                 visibility: hidden;
                 border-radius: 8px;
-                width: 100%;
-                bottom: 0; left: 0;
-                transform: translate(-150%, 110%);
                 transition: visibility .1s ease-out, transform .3s ease-out, opacity .9s ease-out;
                 opacity: 0;
 
@@ -75,20 +70,15 @@ main {
     }
 
     img {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @include position(absolute, 0, auto, auto, 50%, -50%, -50%);
     }
 
     .button-content {
-        display: flex;
-        justify-content: space-around;
+        @include flex(row, space-around, flex-start);
 
         .bookmark {
             cursor: pointer;
-            display: flex;
-            align-items: center;
+            @include flex(row, flex-start, center);
             background-color: #2e2e2e1a;
             border-radius: 33.5px;
 
@@ -133,8 +123,7 @@ main {
     text-align: center;
 
     li {
-        display: flex;
-        flex-direction: column;
+        @include flex(column, flex-start, auto);
         font-size: 14px;
         line-height: 18px;
         padding-top: 24px;
@@ -149,10 +138,10 @@ main {
         border-radius: 99px;
         overflow: hidden;
 
-        .green {
+        .green-bar {
             background-color: $light-cyan;
             height: 100%;
-            width: 70%;
+            width: 89%;
             border-radius: 99px;
         }
 
@@ -181,20 +170,16 @@ main {
     .card {
     
         .title-content {
-            display: flex;
-            flex-direction: column;
+            @include flex(column, auto, auto);
             gap: 8px;
         }
 
         .select-content {
-            display: flex;
-            align-items: flex-start;
-            flex-direction: column;
+            @include flex(column, auto, flex-start);
             gap: 24px;
 
             p {
-                display: flex;
-                align-items: center;
+                @include flex(row, auto, center);
 
                 strong {
                     margin-right: 8px;
@@ -311,9 +296,7 @@ label.card:hover header{
 }
 
 .submit--content_pledge {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    @include flex(row, space-around, center);
     gap: 8px;
     margin-top: 1rem;
     & > .bg-cyan {
@@ -330,12 +313,9 @@ label[class="pledge-label"] {
 
     &::after {
         content: "$";
+        @include position(absolute, 50%, auto, auto, 0, 150%, -50%);
         font-size: 14px;
         opacity: .5;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translate(150%, -50%);
     }
 
 }
@@ -346,13 +326,10 @@ label[class="pledge-label"] {
 
 .support {
     display: none;
-    position: fixed;
+    @include position(fixed, 30%, auto, auto, 50%, -50%, -50%);
     width: calc(100% - 48px);
     max-width: 730px;
-    left: 50%;
     padding: 24px;
-    top: 30%;
-    transform: translate(-50%, -50%);
     z-index: 3;
     background-color: #fff;
     border-radius: 8px;

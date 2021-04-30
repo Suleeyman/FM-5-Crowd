@@ -54,16 +54,17 @@ ul {
 body {
   position: relative;
   font-family: "Commissioner", sans-serif;
-  transition: all 0.3 ease-out;
+  transition: all 0.3s ease-out;
   background-color: #fafafa;
 }
 
 .mask {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
+  transform: translate(0, 0);
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(51, 51, 51, 0.2));
 }
 
@@ -71,9 +72,10 @@ body {
   display: none;
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
+  transform: translate(0, 0);
   background-color: #00000080;
   z-index: 1;
 }
@@ -190,20 +192,22 @@ main {
 }
 main .container nav {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   position: relative;
 }
 main .container nav ul {
   z-index: 1;
   position: absolute;
-  background-color: white;
-  visibility: hidden;
-  border-radius: 8px;
-  width: 100%;
+  top: auto;
+  right: 0;
   bottom: 0;
   left: 0;
   transform: translate(-150%, 110%);
+  background-color: white;
+  visibility: hidden;
+  border-radius: 8px;
   transition: visibility 0.1s ease-out, transform 0.3s ease-out, opacity 0.9s ease-out;
   opacity: 0;
 }
@@ -238,16 +242,22 @@ main .container nav .toggle {
 .mastercraft img {
   position: absolute;
   top: 0;
+  right: auto;
+  bottom: auto;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 .mastercraft .button-content {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
+  align-items: flex-start;
 }
 .mastercraft .button-content .bookmark {
   cursor: pointer;
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   background-color: #2e2e2e1a;
   border-radius: 33.5px;
@@ -279,6 +289,8 @@ main .container nav .toggle {
 .information li {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: auto;
   font-size: 14px;
   line-height: 18px;
   padding-top: 24px;
@@ -292,10 +304,10 @@ main .container nav .toggle {
   border-radius: 99px;
   overflow: hidden;
 }
-.information .bar .green {
+.information .bar .green-bar {
   background-color: #3cb4ac;
   height: 100%;
-  width: 70%;
+  width: 89%;
   border-radius: 99px;
 }
 
@@ -311,16 +323,21 @@ main .container nav .toggle {
 .about .card .title-content {
   display: flex;
   flex-direction: column;
+  justify-content: auto;
+  align-items: auto;
   gap: 8px;
 }
 .about .card .select-content {
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
+  justify-content: auto;
+  align-items: flex-start;
   gap: 24px;
 }
 .about .card .select-content p {
   display: flex;
+  flex-direction: row;
+  justify-content: auto;
   align-items: center;
 }
 .about .card .select-content p strong {
@@ -405,8 +422,9 @@ label.card:hover header .radio--radio {
 
 .submit--content_pledge {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   gap: 8px;
   margin-top: 1rem;
 }
@@ -423,23 +441,27 @@ label[class=pledge-label] {
 }
 label[class=pledge-label]::after {
   content: "$";
+  position: absolute;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  transform: translate(150%, -50%);
   font-size: 14px;
   opacity: 0.5;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translate(150%, -50%);
 }
 
 .support {
   display: none;
   position: fixed;
+  top: 30%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: calc(100% - 48px);
   max-width: 730px;
-  left: 50%;
   padding: 24px;
-  top: 30%;
-  transform: translate(-50%, -50%);
   z-index: 3;
   background-color: #fff;
   border-radius: 8px;

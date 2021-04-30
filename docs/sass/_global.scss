@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 *, ::after, ::before {
     box-sizing: border-box;
     padding: 0;
@@ -11,20 +13,18 @@ ul {
 body {
     position: relative;
     font-family: 'Commissioner', sans-serif;
-    transition: all .3 ease-out;
+    transition: all .3s ease-out;
     background-color: #fafafa;
 }
 
 .mask {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    @include position(absolute, 0, 0, 0, 0);
     background: linear-gradient(to bottom, rgb(0, 0, 0, .5), rgb(51, 51, 51, .2));
 }
 
 .overlay {
     display: none;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
+    @include position(fixed, 0, 0, 0, 0);
     background-color: #00000080;
     z-index: 1;
 }

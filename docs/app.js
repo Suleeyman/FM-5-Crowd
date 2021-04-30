@@ -75,6 +75,9 @@ form.addEventListener('submit', (e) => {
             }
         })
         addBackers(money)
+        mainInput.closest('.card').children[0].children[0].checked = false
+        mainInput.closest('.card').dataset.spam = "1"
+        mainInput.closest('.submit--content').remove()
         return true
     }
     return false

@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Submitted in FM](https://www.frontendmentor.io/solutions/mobile-first-using-scss-hKv0Blq3Q)
 - Live Site URL: [Github Page](https://suleeyman.github.io/FM-5-Crowd/)
 
 ## My process
